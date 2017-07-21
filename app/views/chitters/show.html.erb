@@ -1,0 +1,14 @@
+
+
+<p>
+  <strong>User:</strong>
+  <%= @chitter.user.email %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @chitter.body %>
+</p>
+
+<%= link_to 'Edit', edit_chitter_path(@chitter) %> |
+<%= link_to 'Back', chitters_path %>

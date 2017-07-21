@@ -1,0 +1,22 @@
+<%= form_with(model: chitter, local: true) do |form| %>
+  <% if chitter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(chitter.errors.count, "error") %> prohibited this chitter from being saved:</h2>
+
+      <ul>
+      <% chitter.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body, id: :chitter_body %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

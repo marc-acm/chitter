@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<h1>chitter</h1>
+
+
+
+<div class="container"></div>
+  <div class="row">
+     <div class="col-md-3">User</div>
+     <div class="col-md-9">Body</div>
+   <div class="row">  
+
+ <% @chitters.each do |chitter| %>
+ <div class="row">
+    
+    <div class="col-md-3">
+      <p><%= chitter.user.email %></p>
+      <%= image_tag(chitter.user.picture_url, width: 600) if chitter.user.picture.present? %>
+    </div>
+      <div class="col-md-9">
+      <p><%= chitter.body %></p>
+       
+  <p colspan="3"></p> 
+         <div class="btn-group-bottom pull-right" role="group" aria-label="Basic example">
+        <button type="button"><%= link_to 'Show', chitter, :class => "btn btn-xs" %></button>
+        <button type="button"><%= link_to 'Edit', edit_chitter_path(chitter), :class => "btn btn-xs" %></button>
+        <button type="button"><%= link_to 'Delete', chitter, :class => "btn btn-xs", method: :delete, data: { confirm: 'Are you sure?' } %></button>
+        
+       </div>
+    </div>
+
+ </div>
+
+ <% end %>
+</div>
+<br>
+
+
+
+<%= link_to 'New Chitter', new_chitter_path %>
+
+
