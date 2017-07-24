@@ -11,10 +11,14 @@
 
   <body>
 
+		<div class:"container"></div>
+		<div class:"row">
+			
 		<ul class="nav nav-pills nav-fill">
 		  <li class="active"><a href="/chitters">chitter</a></li>
 		</ul>
 
+		</div>
 		<p class="navbar-text pull-right">
 			<% if user_signed_in? %>
 		  	Logged in as <strong><%= current_user.email %></strong>.
